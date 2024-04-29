@@ -390,6 +390,7 @@ invalidID()-> Returns the view for invalid ID errors.
 * [HTML Files]
   
 [codeFormatter.html]:
+
 A form for entering new code and specifying an ID and duration.
 Displays the original and formatted code and a form for saving the formatted code.
 
@@ -448,6 +449,7 @@ Displays the original and formatted code and a form for saving the formatted cod
     </html>
 
 [formatFailed.html]:
+
 Displays an error message for code formatting failures.
 Provides a link to go back and enter a new code.
 
@@ -468,6 +470,7 @@ Provides a link to go back and enter a new code.
     </html>
 
 [invalidID.html]:
+
 Displays an error message for invalid IDs.
 Provides a link to go back and enter a new code.
 
@@ -486,6 +489,7 @@ Provides a link to go back and enter a new code.
     </html>
 
 [code.html]:
+
 Displays the formatted code or a message if there is no code with the given ID.
 Provides a link to return to the code entry page.
 
