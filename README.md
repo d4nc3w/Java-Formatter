@@ -326,9 +326,13 @@ CodeController(...): Initializes the controller with instances of CodeService an
 
 Methods:
 showForm(Model model) -> Handles GET requests to show the form for entering new code.
+
 formatCode(Code code, Model model) -> Handles POST requests to format the code and display the results.
+
 saveCode(Code code, long duration, ...) -> Handles POST requests to save a code with the specified duration.
+
 getCode(String id, Model model) -> Handles GET requests to retrieve a code by its ID and display it.
+
 invalidID()-> Returns the view for invalid ID errors.
 
     @Controller
@@ -392,6 +396,7 @@ invalidID()-> Returns the view for invalid ID errors.
 [codeFormatter.html]:
 
 A form for entering new code and specifying an ID and duration.
+
 Displays the original and formatted code and a form for saving the formatted code.
 
     <!DOCTYPE html>
@@ -451,6 +456,7 @@ Displays the original and formatted code and a form for saving the formatted cod
 [formatFailed.html]:
 
 Displays an error message for code formatting failures.
+
 Provides a link to go back and enter a new code.
 
     <!DOCTYPE html>
@@ -472,6 +478,7 @@ Provides a link to go back and enter a new code.
 [invalidID.html]:
 
 Displays an error message for invalid IDs.
+
 Provides a link to go back and enter a new code.
 
     <!DOCTYPE html>
@@ -491,6 +498,7 @@ Provides a link to go back and enter a new code.
 [code.html]:
 
 Displays the formatted code or a message if there is no code with the given ID.
+
 Provides a link to return to the code entry page.
 
     <html lang="en">
