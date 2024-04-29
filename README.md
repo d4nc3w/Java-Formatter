@@ -392,14 +392,115 @@ invalidID()-> Returns the view for invalid ID errors.
 A form for entering new code and specifying an ID and duration.
 Displays the original and formatted code and a form for saving the formatted code.
 
-[formatted.html]:
-Displays the formatted code with its ID.
-Provides a link to go back and enter a new code.
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Display Code</title>
+        <link rel="stylesheet" type="text/css" href="codeFormatter.css">
+    </head>
+    <body>
+    <h1>Enter Code</h1>
+    <form method="post" action="/newCode" th:object="${code}">
+        <label>
+            ID:
+            <input th:field="*{id}"/>
+        </label>
+        <br><br>
+        <label>
+            Code:
+            <textarea th:field="*{code}" rows="10" cols="50"></textarea>
+        </label>
+        <br><br>
+        <button type="submit">Format</button>
+    </form>
+    
+    <table th:if="${original != null}">
+        <thead>
+        <tr>
+            <th>Original</th>
+            <th>Formatted</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><pre th:text="${original}"></pre></td>
+            <td><pre th:text="${formatted}"></pre></td>
+        </tr>
+        </tbody>
+    </table>
+    <form th:if="${original != null}" method="post" action="/saveCode" th:object="${formatted}">
+        <input th:field="*{id}" type="hidden" />
+        <input th:field="*{code}" type="hidden" />
+        <label>Duration:</label>
+        <input name="duration" type="number" step="1" required />
+        <select id="unit" name="unit" required>
+            <option value="seconds">Seconds</option>
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+            <option value="days">Days</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Save this code">
+    </form>
+    </body>
+    </html>
 
 [formatFailed.html]:
 Displays an error message for code formatting failures.
 Provides a link to go back and enter a new code.
 
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formatting error</title>
+        <link rel="stylesheet" type="text/css" href="formatFailed.css">
+    </head>
+    <body>
+        <h1>Program was not able to format given code.</h1>
+        <h2>Error message:</h2>
+        <h3 th:text="${errorMsg}"></h3>
+        <br><br>
+        <a href="/newCode">Go back</a>
+    </body>
+    </html>
+
 [invalidID.html]:
 Displays an error message for invalid IDs.
 Provides a link to go back and enter a new code.
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Invalid ID</title>
+        <link rel="stylesheet" type="text/css" href="invalidID.css">
+    </head>
+    <body>
+    <h1>Invalid ID</h1>
+    <p>A code with this ID already exists.</p>
+    <a href="/newCode">Go back</a>
+    </body>
+    </html>
+
+[code.html]:
+Displays the formatted code or a message if there is no code with the given ID.
+Provides a link to return to the code entry page.
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formatted Code</title>
+        <link rel="stylesheet" type="text/css" href="code.css">
+    </head>
+    <body>
+    <div th:if="${formatted}">
+        <h1>Given Code After Formatting:</h1>
+        <h2 th:text="|ID: ${formatted.id}|"></h2>
+        <pre th:utext="${formatted}"></pre>
+    </div>
+    <h1 th:unless="${formatted}">There is no existing code mapped to the given ID</h1>
+    <a href="/newCode">Go back</a>
+    </body>
+    </html>
