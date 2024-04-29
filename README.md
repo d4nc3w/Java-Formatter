@@ -5,6 +5,7 @@ Java application combined with HTML functionality, [Spring Web] and [GoogleJavaF
 Documentation:
 
 * [JavaFormatService]
+
 Purpose: Provides a service for formatting Java source code.
 
 Attributes:
@@ -28,6 +29,7 @@ format(String code): Takes a string representing Java code as input and returns 
 
 
 *  [CodeService]
+  
 Purpose: Manages code storage and operations, including saving codes with a specified duration and managing expiration of codes.
 
 Attributes:
@@ -149,6 +151,7 @@ startThreads(Map<String, Code> codes) -> Starts countdown threads for each code 
         }
 
 * [CodeRepository]
+  
 Purpose: Manages the storage and retrieval of codes using a HashMap and provides persistence using serialization.
 
 Attributes:
@@ -245,6 +248,7 @@ getCodes() -> Retrieves the map of codes.
     }
 
 * [Code]
+  
 Purpose: Represents a code entry with an ID, the actual code string, and expiration time.
 
 Attributes:
@@ -309,6 +313,7 @@ toString() -> Returns a string representation of the code.
     }
 
 * [CodeController]
+  
 Purpose: Handles HTTP requests related to code formatting and retrieval.
 
 Attributes:
@@ -382,6 +387,7 @@ invalidID()-> Returns the view for invalid ID errors.
     }
 
 * [HTML Files]
+  
 [codeFormatter.html]:
 A form for entering new code and specifying an ID and duration.
 Displays the original and formatted code and a form for saving the formatted code.
