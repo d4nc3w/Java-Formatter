@@ -1,0 +1,21 @@
+body {
+    background-color: lightcyan;
+    text-align: center;
+}
+
+pre {
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    font-size: 16px;
+    text-align: left;
+}
+
+a {
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
