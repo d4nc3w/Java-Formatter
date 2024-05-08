@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: TPO_08
+server:
+  servlet:
+    context-path: /codeFormatter
+    session:
+      cookie:
+        max-age: 86400
+      timeout: 1440
