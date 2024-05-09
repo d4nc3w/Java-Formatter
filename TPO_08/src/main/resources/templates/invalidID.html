@@ -7,17 +7,16 @@
     <title>Invalid ID</title>
     <link rel="stylesheet" type="text/css" href="layout.css">
 </head>
-<body class="custom-body">
+<!--<body class="custom-body">-->
+<body class="bg-info-subtle text-info-emphasis text-center">
     <main layout:fragment="content">
         <span class="badge rounded-pill text-bg-danger">Error Page</span>
         <h1>Invalid ID</h1>
 <!--        <p>A code with this ID already exists.</p>-->
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Error!</strong> Code with this ID already exists
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <a class="btn btn-primary" href="/codeFormatter/Home" role="button">Go Back</a>
-<!--        <a class="custom-button" href="/codeFormatter/newCode">Go back</a>-->
+        <a class="btn btn-primary" href="/codeFormatter/" role="button">Go Back</a>
     </main>
 </body>
 </html>

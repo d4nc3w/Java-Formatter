@@ -20,13 +20,13 @@ public class CodeController {
         this.googleFormatService = JavaFormatService;
     }
 
-    @GetMapping("/Home")
+    @GetMapping("/")
     public String showForm(Model model) {
         model.addAttribute("code", new Code());
         return "codeFormatter";
     }
 
-    @PostMapping("/Home")
+    @PostMapping("/")
     public String formatCode(@ModelAttribute Code code, Model model) {
         model.addAttribute("original", code.getCode());
         try {

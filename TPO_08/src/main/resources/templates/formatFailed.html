@@ -7,19 +7,20 @@
     <title>Format Failed</title>
     <link rel="stylesheet" type="text/css" href="layout.css">
 </head>
-<body class="custom-body">
+<!--<body class="custom-body">-->
+<body class="bg-info-subtle text-info-emphasis text-center">
     <main layout:fragment="content">
         <span class="badge rounded-pill text-bg-danger">Error Page</span>
         <h1>Program was not able to format given code</h1>
         <div class="alert alert-danger" role="alert">
-            <h3>Error message:</h3>
-            <h2 th:text="${errorMsg}"></h2>
+            <h4>Error message:</h4>
+            <h3 th:text="${errorMsg}"></h3>
         </div>
 <!--        <h2>Error message:</h2>-->
 <!--        <h3 th:text="${errorMsg}"></h3>-->
         <br>
 <!--        <a class="custom-button" href="/codeFormatter/newCode">Go back</a>-->
-        <a class="btn btn-primary" href="/codeFormatter/Home" role="button">Go Back</a>
+        <a class="btn btn-primary" href="/codeFormatter/" role="button">Go Back</a>
     </main>
 </body>
 </html>
